@@ -1,0 +1,244 @@
+h1, h2 {
+  text-align: center;
+  margin: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h1 {
+  margin-bottom: 0;
+}
+#root {
+  width: 100%;
+}
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.form {
+  border: 5px solid black;
+  background-color: red;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+}
+.input-field, .add-button {
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+}
+
+.todolists {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+}
+.todolist-wrapper {
+  border: black 5px solid;
+  border-radius: 30px;
+  background-color: red;
+}
+.todolist {
+  height: 50vh;
+  min-width: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: black;
+  border: red 5px solid;
+  border-radius: 0 0 30px 30px; /*TL TR BR BL*/
+}
+.Collapsible {
+  border: black 1px solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+::-webkit-scrollbar {
+  background: rgba(0, 0, 0, 0);
+  width: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+.Collapsible__trigger {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+.Collapsible__trigger:after {
+  float: right;
+    font-family: 'FontAwesome';
+    content: '\f13a';
+}
+.Collapsible__trigger:hover {
+  cursor: pointer;
+}
+
+.Collapsible__trigger.is-open:after {
+    font-family: 'FontAwesome';
+    content: '\f13a';
+    transform: rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.fa-pen, .fa-trash, .fa-circle-check {
+  width: 40%;
+}
+.fa-circle-check:before {
+  float: left;
+    font-family: 'FontAwesome';
+    content: '\f058';
+    float: none;
+    vertical-align: middle;
+}
+.fa-pen:before {
+  float: left;
+    font-family: 'FontAwesome';
+    content: '\f044';
+    float: none;
+    vertical-align: middle;
+}
+.fa-trash:before {
+  float: left;
+    font-family: 'FontAwesome';
+    content: '\f1f8';
+    float: none;
+    vertical-align: middle;
+}
+
+.status.ongoing .Collapsible {
+  background-color: red;
+}
+.status.done .Collapsible {
+  background-color: lightgray;
+  color: darkgray;
+}
+.Collapsible button {
+  height: 30px;
+}
+.status.done .Collapsible .fa-pen,
+.status.done .Collapsible .fa-trash {
+  color: darkgray;
+}
+.status.done .Collapsible .input-field {
+  color: darkgray;
+  border: 2px solid darkgray;
+}
+.status.done .Collapsible__trigger {
+  border-bottom: 1px solid darkgray;
+}
+.item-form {
+  display: flex;
+    flex-direction: column;
+}
+
+ #overlay {
+  position: fixed; 
+  width: 100%; 
+  top: 0;
+  background-color: rgba(0,0,0,0); 
+  z-index: 10000;
+}
+.alert,
+.alert button {
+  font-size: 16px;
+  font-weight: bold;
+}
+.alert button {
+  text-decoration: underline;
+}
+.alert {
+  background: rgba(255,255,0,0.75);
+  width: 90vw;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+}
+.alert:before {
+    font-family: 'FontAwesome';
+  content: '\f0f3';
+  padding: 5px;
+}
+.fa-xmark {
+  cursor: pointer;
+}
+.fa-xmark:after {
+    font-family: 'FontAwesome';
+  content: '\f00d';
+  float: right;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+  margin-top: -30px;
+}
+.status.done .Collapsible .fa-pen .tooltiptext,
+.status.done .Collapsible .fa-trash .tooltiptext {
+  visibility: hidden;
+}
+.non-button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+.status.highlighted .Collapsible
+{
+  border: red 5px solid;
+  background-color: yellow;
+}
+
+.task-done:before
+{
+    font-family: 'FontAwesome';
+  content: '\f00c';
+}
+.task-undone:before
+{
+    font-family: 'FontAwesome';
+  content: '\f00d';
+}
+
+.alert#stats:before {
+    font-family: 'FontAwesome';
+  content: '\f05a';
+}
+.stats {
+  display: flex;
+    justify-content: space-evenly;
+}
+
+.warn-required {
+  border: black 5px solid;
+}
