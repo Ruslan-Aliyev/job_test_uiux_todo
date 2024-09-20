@@ -6,6 +6,11 @@ const Collapse = ({index, item, check, update, remove}) => {
   const [content, setContent] = useState(item.content);
   const [dueDate, setDueDate] = useState(item.dueDate);
 
+  useEffect(() => {
+    setContent(item.content);
+    setDueDate(item.dueDate);
+  }, [item]);
+
   const ref = useRef();
 
   useEffect(() => {

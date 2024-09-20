@@ -409,7 +409,7 @@ const App = () => {
                 ref={el => { todoRefs.current[`work-${index}`] = el; }}
                 className={`status ${item.done ? "done" : "ongoing"}`}
                 draggable="true"
-                onDragStart={() => setDragged(item)}
+                onDragStart={(e) => setDragged(item)}
                 onDragEnd={() => setDragged(null)}
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={() => handleDrop(item, 'work')}

@@ -7,9 +7,7 @@ h1, h2 {
 h1 {
   margin-bottom: 0;
 }
-#root {
-  width: 100%;
-}
+
 .form-wrapper {
   display: flex;
   justify-content: center;
